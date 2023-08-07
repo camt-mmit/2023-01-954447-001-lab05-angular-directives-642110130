@@ -1,0 +1,17 @@
+
+<button type="button" (click)="add()">add Input</button>
+<div *ngFor="let item of items; let i = index">
+  <label>
+    <b>Number {{ i + 1 }} ::</b> <!-- เพิ่มตัวเลขตามลำดับโดยใช้ตัวแปร i -->
+    <input #elem type="number" [value]="item.value" (change)="onChange(i, elem.valueAsNumber)">
+  </label>
+  <button type="button" (click)="delete(i)">Delete</button><br/>
+</div>
+
+<label>
+  <b>Result ::</b>
+  <output>{{ getResult() }}</output>
+</label>
+<br/>
+<br/>
+
